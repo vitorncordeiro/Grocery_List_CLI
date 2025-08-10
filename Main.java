@@ -7,7 +7,7 @@ public class Main {
         Lista lista = new Lista();
         boolean flag = true;
         while (flag) {
-            System.out.println("Digite um comando abaixo: [0 para sair]");
+            System.out.println("Enter a command below: [0 to exit]");
             System.out.println("");
             System.out.println(menu());
             int option = sc.nextInt();
@@ -16,23 +16,26 @@ public class Main {
                     flag = false;
                     break;
                 case 1:
-                    System.out.println("Digite o nome do item que deseja incluir: ");
-                    String nomeItemAdd = sc.next();
-                    lista.addItem(nomeItemAdd);
+                    System.out.println("Enter the name of the item to add: ");
+                    String itemNameAdd = sc.next();
+                    lista.addItem(itemNameAdd);
                     break;
                 case 2:
-                    System.out.println("Digite o nome do item que deseja excluir: ");
-                    String nomeItemRem = sc.next();
-                    lista.removeItem(nomeItemRem);
+                    System.out.println("Enter the name of the item to remove: ");
+                    String itemNameRem = sc.next();
+                    lista.removeItem(itemNameRem);
                     break;
                 case 3:
                     lista.printList();
                     break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    break;
             }
         }
     }
-    public static String menu() {
-        return "0 - Sair\n1- Incluir item\n2- Excluir item\n3- Mostrar lista";
-    }
 
+    public static String menu() {
+        return "0 - Exit\n1 - Add item\n2 - Remove item\n3 - Show list";
+    }
 }
